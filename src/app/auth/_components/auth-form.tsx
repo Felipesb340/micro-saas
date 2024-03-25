@@ -17,13 +17,13 @@ export function AuthForm() {
       await signIn('email', { email: data.email , redirect: false})
 
       toast({
-        title: 'Magic Link Sent',
-        description: 'Check your email for the magic link to login'
+        title: 'Link de acesso enviado!',
+        description: 'Check seu email para o link de acesso!'
       })
     } catch (error) {
       toast({
-        title: 'Error',
-        description: 'An error ocurred. Please try again.'
+        title: 'Erro',
+        description: 'ocorreu um erro. Tente novamente.'
       })}
   })
 
@@ -31,14 +31,14 @@ export function AuthForm() {
     <Card className="w-full max-w-md mx-auto">
       <CardHeader className="text-center space-y-1">
         <CardTitle className="text-3xl">Login</CardTitle>
-        <CardDescription>Enter your email to receive a magic link</CardDescription>
+        <CardDescription>Digite seu email para receber o link de acesso</CardDescription>
       </CardHeader>
       <form onSubmit={handleSubmit} className="space-y-4 p-7">
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" placeholder="m@example.com" type="email" {...form.register('email')} />
+          <Input id="email" placeholder="usuario@exemplo.com" type="email" {...form.register('email')} />
         </div>
-        <Button className="w-full" type="submit" >Send magic link</Button>
+        <Button className="w-full" type="submit" >Enviar link</Button>
       </form>
     </Card>
   )
